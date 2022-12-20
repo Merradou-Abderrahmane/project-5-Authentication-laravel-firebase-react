@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->boolean("completed")->default(false);
-            $table->unsignedInteger("user_id");
-            $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
+            $table->foreignId("user_id")->constrained()->onDelete("cascade");
             $table->timestamps();
         });
     }
