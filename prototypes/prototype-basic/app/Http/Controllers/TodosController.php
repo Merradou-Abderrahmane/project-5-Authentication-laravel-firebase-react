@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Todo; 
+
 
 class TodosController extends Controller
 {
@@ -11,11 +14,20 @@ class TodosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    // public function __construct(){
+    //     $this->middleware('auth')->except('index');
+    //     // or 
+    //     $this->middleware('auth')->only('create','store','delete');
+    // }
+
     public function index()
     {
         // return tasks from database and compact to view
-        
-        
+
+            $tasks = Todo::all();   
+             return view('todolist',compact('tasks'));
+
     }
 
     /**
@@ -37,6 +49,16 @@ class TodosController extends Controller
     public function store(Request $request)
     {
         //
+        if (Auth::check()) {
+            $task = new Todo();
+            $task->name = $request->name ;
+            $task->save();
+             return redirect('/todolist');
+        }
+        else {
+            return redirect('/login');
+        }
+
 
     }
 
