@@ -14,7 +14,7 @@
     {{--  --}}
     @foreach ($tasks as $value)
     <tr>
-        <th> - {{$value->task_name}}</th>
+        <th> - {{$value->name}}</th>
         <br>
         <td>
         </td>
@@ -26,7 +26,7 @@
 <div class="mb-2 w-25 container-fluid lead form-control shadow p-3 mb-5 bg-white rounded ">
 <form action="add" method="POST">
 @csrf
-    Add Task : <input name="Name" class="form-control lead" type="text">
+    Add Task : <input name="name" class="form-control lead" type="text">
     <br>
     <button class="btn btn-success">+ Add</button>
 </form>
