@@ -39,9 +39,16 @@
                 </a>
             @endif
 
+           
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>
+
+
         </div>
+         <a href="" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
+                <i class="fab fa-google mr-2"></i> Login with Google
+            </a>
+             
     </form>
 </x-guest-layout>
