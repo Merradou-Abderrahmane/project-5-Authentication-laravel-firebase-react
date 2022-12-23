@@ -46,9 +46,12 @@
 
 
         </div>
-         <a href="" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
+        <div class= " mx-auto mt-4">
+            <a href="" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mx-auto mt-4">
                 <i class="fab fa-google mr-2"></i> Login with Google
             </a>
+        </div>
+
              
     </form>
 </x-guest-layout>
